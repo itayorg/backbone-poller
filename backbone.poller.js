@@ -68,6 +68,14 @@ Backbone Poller may be freely distributed under the MIT license.
       return pollers.length;
     },
 
+    stop: function() {
+      _.each(pollers, function(poller) {poller.stop();} );
+    },
+
+    start: function() {
+      _.each(pollers, function(poller) {poller.start();} );
+    },
+
     // **Backbone.Poller.reset()**
     // <pre>
     // Stops all pollers and removes from the pollers pool
